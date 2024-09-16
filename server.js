@@ -6,26 +6,32 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors()); //tout le monde peut m'envoyer des requêtes
+app.use(cors(
+    {
+        origin: "*",
+        methods:["GET", "POST", "PUT", "DELETE"],
+        allowHeaders: ["Content-Type","Authorization"]
+    }
+)); //tout le monde peut m'envoyer des requêtes
 
 app.get("/books", function(req, res) {
-    return res.send("Tu veux les livres")
+    return res.status(200).send("Tu veux les livres")
 })
 
 app.post("/books",  function(req, res) {
-    return res.send("Tu as créé un livre")
+    return res.status(201).send("Tu as créé un livre")
 })
 
 app.delete("/books/:id",  function(req, res) {
-    return res.send("Tu as supprimé le livre ayant l'id "+ req.params.id)
+    return res.status(200).send("Tu as supprimé le livre ayant l'id "+ req.params.id)
 })
 
 app.put("/books/:id",  function(req, res) {
-    return res.send("Tu as un modifié le livre ayant l'id "+ req.params.id)
+    return res.status(200).send("Tu as un modifié le livre ayant l'id "+ req.params.id)
 })
 
 app.use(function(req, res){
-    return res.send("URL inconnue")
+    return res.status(404).send("URL inconnue")
 })
 
 app.set("host", process.env.HOST)
