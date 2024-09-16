@@ -2,3 +2,12 @@
 DELETE http://localhost:3000/books/1
 ###
 GET http://localhost:3000/book
+
+###
+POST http://localhost:3000/api/pretenders
+Content-Type: application/json
+
+{
+    "email":"boris@gmail.com",
+    "password":"caroline"
+}

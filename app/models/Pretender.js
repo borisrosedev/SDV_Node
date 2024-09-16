@@ -8,27 +8,39 @@ const Pretender = sequelize.define('Pretender', {
 
     firstname: {
         type: DataTypes.STRING,
-        allowNull: true
+
     }, 
     lastname: {
         type: DataTypes.STRING,
-        allowNull: true
+
     },
     email: {
         type: DataTypes.STRING,
         unique: true,
-        allowNull: true
+
     },
     password: {
         type: DataTypes.STRING,
-        allowNull:true
+
     },
     birthdate: {
         type: DataTypes.DATE,
-        allowNull: false
+
+    },
+    status: {
+        type: DataTypes.ENUM,
+        values: ['active', 'inactive']
+    },
+    photo: {
+        type : DataTypes.STRING,
+
     },
     wallet : {
         type: DataTypes.FLOAT,
+        default: 0
+    },
+    likes: {
+        type: DataTypes.INTEGER,
         default: 0
     }
 
@@ -36,4 +48,7 @@ const Pretender = sequelize.define('Pretender', {
 })
 
 
-console.log(Pretender === sequelize.models.Pretender);
+//console.log(Pretender === sequelize.models.Pretender);
+//Pretender.sync({ alter: true })
+
+module.exports = Pretender
