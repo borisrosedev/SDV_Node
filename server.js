@@ -13,8 +13,6 @@ const app = express();
             host: process.env.HOST,
             dialect: process.env.DB_DIALECT
         });
-
-
         await sequelize.authenticate();
         console.log('Connection has been established successfully.');
     } catch (error) {
