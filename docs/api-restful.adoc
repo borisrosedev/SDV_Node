@@ -1,0 +1,87 @@
+= Une API RESTful
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
+
+== Introduction
+
+Une API RESTful (ou API basée sur l'architecture REST) est une interface de programmation d'application qui utilise les principes de l'architecture REST (Representational State Transfer). 
+
+=== ...
+
+Cette architecture est largement utilisée pour permettre la communication entre systèmes sur le web, en particulier dans les applications web.
+
+=== Caractéristiques principales d'une API RESTful :
+
+=== Stateless : 
+
+Chaque requête envoyée par le client au serveur doit contenir toutes les informations nécessaires pour comprendre et traiter la requête. 
+
+=== ...
+
+Le serveur ne stocke pas d'état entre les requêtes. 
+
+=== ...
+
+Cela rend l'API plus scalable et plus simple à maintenir.
+
+=== Utilisation des méthodes HTTP : 
+
+Les API RESTful utilisent les méthodes HTTP standards, telles que :
+
+=== GET : 
+
+pour récupérer des données.
+
+=== POST : 
+
+pour créer de nouvelles données.
+
+=== PUT ou PATCH : 
+
+pour mettre à jour des données existantes.
+
+=== DELETE : 
+
+pour supprimer des données.
+
+Ressources identifiées par des URI : Dans une API RESTful, chaque ressource (objet, donnée, etc.) est identifiée par un URI (Uniform Resource Identifier). 
+
+=== ...
+
+Par exemple, dans une API de gestion de livres, l'URI d'un livre spécifique pourrait être /livres/123, où 123 est l'identifiant du livre.
+
+=== Utilisation de formats standard : 
+
+Les API RESTful utilisent des formats de données standard comme JSON (JavaScript Object Notation) ou XML pour échanger des données entre le client et le serveur.
+
+=== Indépendance entre le client et le serveur : 
+
+Le client et le serveur peuvent évoluer de manière indépendante tant qu'ils respectent l'interface définie par l'API.
+
+== Exemple d'une API RESTful
+
+Prenons l'exemple d'une API pour gérer une bibliothèque :
+
+=== GET /livres : 
+
+Récupère la liste de tous les livres.
+
+=== GET /livres/123 : 
+
+Récupère les détails du livre ayant l'identifiant 123.
+
+=== POST /livres : 
+
+Ajoute un nouveau livre à la bibliothèque.
+
+=== PUT /livres/123 : 
+
+Met à jour les informations du livre 123.
+
+=== DELETE /livres/123 : 
+
+Supprime le livre 123 de la bibliothèque.
+
+Une API RESTful est donc un moyen standard et efficace pour interagir avec des données via le protocole HTTP en utilisant des méthodes bien définies.

@@ -1,0 +1,90 @@
+= URI
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
+== Introduction
+
+Une URI (Uniform Resource Identifier) est un identifiant utilisé pour nommer ou identifier une ressource sur un réseau, généralement sur Internet. 
+
+=== ...
+
+Elle permet d'identifier de manière unique une ressource, comme une page web, un fichier, un service ou une API.
+
+== Il existe deux types de URI :
+
+=== URL (Uniform Resource Locator) : 
+
+c'est l'URI la plus courante, qui localise une ressource spécifique sur le web. Elle indique à la fois où la ressource se trouve et comment y accéder (généralement via des protocoles comme HTTP, HTTPS, FTP, etc.).
+
+=== URN (Uniform Resource Name) : 
+
+identifie une ressource par un nom unique, indépendamment de son emplacement.
+Structure d'une URI
+
+== Une URI est composée de plusieurs parties :
+
+[source, bash]
+----
+protocole://hôte/chemin?paramètres#fragment
+----
+
+
+=== Protocole : 
+
+Le schéma ou protocole utilisé pour accéder à la ressource, par exemple http, https, ftp, etc.
+
+=== Hôte : 
+
+Le nom de domaine ou l'adresse IP de la ressource (ex : www.example.com).
+
+=== Chemin : 
+
+Le chemin d'accès à la ressource, qui peut représenter des répertoires et des fichiers (ex : /dossier/fichier.html).
+
+=== Paramètres (facultatif) : 
+
+Représente les données supplémentaires envoyées avec la requête. Ils sont souvent utilisés pour passer des informations via des paires clé-valeur (ex : ?id=123&sort=asc).
+
+=== Fragment (facultatif) : 
+
+Un identifiant interne permettant de pointer vers une section spécifique de la ressource (ex : #section2).
+
+== Exemple d'une URI complète
+[source, bash]
+----
+https://www.example.com/articles/reseau?id=10#section1
+----
+
+
+=== Protocole : 
+
+https
+
+=== Hôte : 
+
+www.example.com
+
+=== Chemin : 
+
+/articles/reseau
+
+=== Paramètres : 
+
+id=10
+
+=== Fragment : 
+
+#section1
+
+== Différence entre URL et URN
+
+=== URL (Uniform Resource Locator) : 
+
+C'est une URI qui inclut l'emplacement exact de la ressource, par exemple https://www.example.com/page.html.
+
+=== URN (Uniform Resource Name) : 
+
+Elle identifie la ressource par un nom unique sans donner son emplacement. Par exemple, pour un livre, cela pourrait être sous la forme d'un ISBN comme urn:isbn:978-3-16-148410-0.
+
+

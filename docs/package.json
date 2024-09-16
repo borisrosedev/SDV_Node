@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "html": "npx asciidoctor-revealjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@asciidoctor/reveal.js": "^5.1.0",
+    "asciidoctor": "^3.0.4"
+  },
+  "devDependencies": {},
+  "description": ""
+}
