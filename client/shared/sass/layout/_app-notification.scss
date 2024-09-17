@@ -1,0 +1,33 @@
+@use "../abstracts/keyframes";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+
+#app-notification {
+    @include mixins.flex-box();
+    position: fixed;
+    bottom: 10px;
+    align-self: center;
+
+    .custom-notification {
+       
+        font-size: 20px;
+        background-color: functions.darken();
+        padding: 5px 10px;
+        border-radius: 10px;
+        opacity: 0;
+        animation: show-up 5000ms ease-in-out forwards;
+    }
+
+    .info-notification {
+        color: variables.$secondary-color;
+    }
+
+    .error-notification {
+        color: variables.$error-color;
+    }
+
+    .success-notification {
+        color: variables.$success-color;
+    }
+}

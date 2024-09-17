@@ -1,4 +1,5 @@
 import BaseContainer from "../../core/BaseContainer.js";
+import NotificationService from "../../services/notification/notification.service.js";
 
 class HomeContainer extends BaseContainer {
   constructor(Alpine) {
@@ -13,6 +14,8 @@ class HomeContainer extends BaseContainer {
         },
       }));
     });
+
+    NotificationService.getInstance().setContent({type: "info", value: "Bienvenue sur MatchUp"})
   }
 
   onClick() {

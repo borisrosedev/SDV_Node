@@ -9,6 +9,7 @@ class AuthService {
     const response = await ApiDataSource.post(data, "pretenders/login", null);
     if (!response.token) return "Authentication failed";
     LocalStorageDataSource.setSpecificItem("token", response.token);
+    return "Authentication completed with success";
   }
 }
 

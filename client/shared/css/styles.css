@@ -1,5 +1,27 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes show-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
 .app-header {
   position: fixed;
   z-index: 20;
@@ -14,6 +36,8 @@
 
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -21,7 +45,14 @@ a {
   color: #000;
 }
 
-figure, ul, li, p, h1, h2, h3, h4 {
+figure,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -39,7 +70,8 @@ img {
   justify-content: flex-start;
   width: 100%;
 }
-.app-form section, .app-form article {
+.app-form section,
+.app-form article {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -92,7 +124,36 @@ img {
   padding-top: 8vh;
 }
 
+#app-notification {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: fixed;
+  bottom: 10px;
+  align-self: center;
+}
+#app-notification .custom-notification {
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: show-up 5000ms ease-in-out forwards;
+}
+#app-notification .info-notification {
+  color: #ffa500;
+}
+#app-notification .error-notification {
+  color: rgb(194, 87, 87);
+}
+#app-notification .success-notification {
+  color: rgb(51, 136, 51);
+}
+
 .home__main {
+  background-blend-mode: color;
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,6 +161,9 @@ img {
 }
 .home__main .home__welcome-section h1 {
   font-size: 30px;
+}
+.home__main .home__welcome-section button {
+  margin-block: 50px;
 }
 
 .login__main {

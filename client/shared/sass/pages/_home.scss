@@ -1,11 +1,17 @@
 @use "../abstracts/mixins";
-
+@use "../abstracts/functions";
 .home__main {
+  background-blend-mode: color;
+  background-color: functions.darken(0.4);
   @include mixins.flex-box(center, center, column);
   .home__welcome-section {
     
     h1 {
       font-size: 30px;
+    }
+
+    button {
+      margin-block: 50px;
     }
   }
 }
