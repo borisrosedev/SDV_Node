@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass:watch": "sass --watch ./shared/sass:./shared/css"
+    "sass:watch": "sass --watch ./shared/sass:./shared/css",
+    "format:write": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
     "alpinejs": "^3.14.1"
   },
   "devDependencies": {
+    "prettier": "^3.3.3",
     "sass": "^1.78.0"
   }
 }

@@ -1,0 +1,16 @@
+@mixin symetric-figure($side: 40px, $is-circular: "true") {
+  height: $side;
+  width: $side;
+
+  @if #{$is-circular} == "true" {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+@mixin flex-box($justif: flex-start, $align: flex-start, $dir: row) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justif;
+}

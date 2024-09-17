@@ -1,4 +1,7 @@
-.home__main {
+@use "../abstracts/mixins";
 
-    
+.home__main {
+  @include mixins.flex-box(center, center, column);
+  .home__welcome-section {
+  }
 }

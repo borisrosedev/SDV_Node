@@ -1,0 +1,27 @@
+@use "../abstracts/extensions";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.app-header {
+  @include mixins.flex-box(space-between, center);
+  @extend %header-position;
+  box-shadow: 0 0 5px #000000;
+  height: 8vh;
+  padding-inline: 10px;
+
+  figure {
+    @include mixins.symetric-figure();
+  }
+
+  nav,
+  ul {
+    display: flex;
+    a {
+      color: #fff;
+      transition: all ease-in-out 300ms;
+      &:hover {
+        color: variables.$primary-color;
+      }
+    }
+  }
+}

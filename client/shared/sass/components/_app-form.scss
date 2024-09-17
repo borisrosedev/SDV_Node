@@ -1,0 +1,21 @@
+@use "../abstracts/mixins";
+
+.app-form {
+  @include mixins.flex-box(flex-start, flex-start, column);
+  width: 100%;
+
+  section,
+  article {
+    @include mixins.flex-box(flex-start, flex-start, column);
+    width: 100%;
+  }
+
+  & > section:first-of-type section {
+    margin-block: 10px;
+  }
+
+  & > section:last-of-type {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

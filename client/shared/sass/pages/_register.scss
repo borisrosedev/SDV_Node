@@ -1,3 +1,22 @@
+@use "../abstracts/mixins";
+@use "../abstracts/functions";
 .register__main {
-    
+  background-blend-mode: color;
+  background-color: functions.darken(0.4);
+  @include mixins.flex-box(center, center, column);
+  & > section {
+    width: 400px;
+    h1 {
+      font-size: 30px;
+    }
+    form {
+      padding: 10px;
+      border-radius: 10px;
+      background-color: functions.darken();
+    }
+
+    @media (0 <= width <= 435px) {
+      width: 95%;
+    }
+  }
 }

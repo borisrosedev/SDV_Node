@@ -1,0 +1,27 @@
+
+DELETE http://localhost:3000/books/1
+###
+GET http://localhost:3000/book
+
+###
+POST http://localhost:3000/api/pretenders
+Content-Type: application/json
+
+{
+    "email":"carlos",
+    "password":"caroline"
+}
+
+###
+POST http://localhost:3000/api/pretenders/login 
+Content-Type: application/json
+
+{
+    "email":"boris@gmail.com",
+    "password": "caroline"
+}
+
+
+###
+GET http://localhost:3000/api/pretenders/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJvcmlzQGdtYWlsLmNvbSIsImlhdCI6MTcyNjU2Mjk5MCwiZXhwIjoxNzI2NTY2NTkwfQ.U9xt2_fFcpbYCEWYO6DhskiUmtR-tcLf_6wEgzsGYnU

@@ -1,14 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr-FR" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MatchUp</title>
-    <link rel="stylesheet" href="../shared/css/styles.css">
-</head>
-<body>
-    <main class="app-main home__main">
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Boris Rose" />
+    <meta name="description" content="Match Up: The App that rocks !" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Match Up" />
+    <link rel="icon" href="/client/shared/images/logo.png" type="image/png" />
+    <title>MatchUp | Home</title>
+    <script
+      src="https://kit.fontawesome.com/1b1fa6fbda.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/client/shared/css/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="./index.html">
+        <figure>
+          <img src="/client/shared/images/logo.png" alt="Logo de MatchUp" />
+        </figure>
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="./src/html/login.html">
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="app-main home__main" x-data>
+      <section class="home__welcome-section">
+        <h1 x-text="'Bienvenue'"></h1>
+        <button class="button" x-bind="NavigateButton">Se connecter</button>
+      </section>
     </main>
-</body>
+    <script type="module" src="../alpine/src/main.js"></script>
+  </body>
 </html>
