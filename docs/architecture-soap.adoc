@@ -1,0 +1,165 @@
+= L'architecture SOAP 
+
+== Introduction
+
+L'architecture SOAP (Simple Object Access Protocol) est un protocole de communication qui permet l'échange d'informations structurées dans des environnements décentralisés et distribués. 
+
+
+Principaux composants et caractéristiques de cette architecture :
+
+
+== Message SOAP
+
+Le cœur de SOAP est son message, qui est structuré en XML. 
+
+
+Un message SOAP se compose de plusieurs parties :
+
+=== Envelope : 
+
+L'enveloppe définit le début et la fin du message. Elle encapsule toutes les autres parties.
+
+=== Header : 
+
+Cette section est optionnelle et contient des informations d'en-tête (par exemple, la sécurité, les sessions, etc.). 
+
+Les en-têtes peuvent être utilisés pour des fonctionnalités spécifiques comme la gestion des transactions ou le contrôle d'accès.
+
+=== Body : 
+
+Le corps contient le message principal ou les données spécifiques que vous envoyez. 
+
+C'est ici que se trouvent les requêtes et les réponses.
+Fault (optionnel) : 
+
+Ce segment est utilisé pour signaler des erreurs dans le message SOAP ou dans le traitement de celui-ci.
+
+
+== Transports
+
+SOAP est agnostique en termes de transport, mais il est généralement utilisé avec les protocoles suivants :
+
+=== HTTP : 
+
+Le plus commun, car il traverse facilement les firewalls.
+
+=== SMTP : 
+
+Pour des systèmes de messagerie asynchrone.
+
+=== JMS (Java Message Service) : 
+
+Pour une communication message-oriented middleware.
+
+== Web Services Description Language (WSDL)
+ 
+Les services SOAP sont souvent décrits en utilisant WSDL, un fichier XML qui définit les méthodes disponibles, les types de données utilisés, et les protocoles de communication autorisés. 
+
+=== ...
+
+WSDL fournit un contrat qui décrit l'interface du service Web.
+
+
+== Fonctionnement de l'architecture SOAP
+
+=== Client : 
+
+Le client envoie une requête SOAP enveloppée dans un format XML au serveur, en utilisant généralement HTTP comme transport.
+
+=== Serveur : 
+
+Le serveur reçoit la requête, la traite, et renvoie une réponse sous la forme d'un message SOAP également encapsulé en XML.
+
+== Avantages
+
+=== Standardisé : 
+
+SOAP est un protocole bien défini et largement standardisé.
+
+=== Fiabilité : 
+
+SOAP garantit une transmission fiable des messages, y compris dans des environnements distribués complexes.
+
+=== Extensible : 
+
+Grâce à son utilisation d'XML et d'en-têtes personnalisables, il est facile d'ajouter des fonctionnalités supplémentaires (sécurité, transactions, etc.).
+
+
+== Inconvénients
+
+=== Complexité : 
+
+SOAP est plus lourd que les autres approches comme REST, en raison de sa structure XML et de ses nombreuses fonctionnalités.
+
+=== Performance : 
+
+La sérialisation XML rend SOAP plus lent que des alternatives plus légères comme JSON utilisé avec REST.
+
+=== ...
+
+SOAP est particulièrement utile dans des environnements où la sécurité, la fiabilité et la conformité sont essentielles, comme dans les applications d'entreprise et les services bancaires.
+
+
+
+== Exemple
+
+Requête SOAP
+Supposons que nous ayons un service Web SOAP qui gère une banque en ligne, et qu'on souhaite vérifier le solde d'un compte. Voici un exemple de requête SOAP pour obtenir le solde d'un compte donné :
+
+[source, xml]
+----
+POST /banking HTTP/1.1
+Host: www.bankexample.com
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+SOAPAction: "urn:getAccountBalance"
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Header/>
+   <soap:Body>
+      <GetAccountBalanceRequest xmlns="http://www.bankexample.com/">
+         <accountNumber>1234567890</accountNumber>
+      </GetAccountBalanceRequest>
+   </soap:Body>
+</soap:Envelope>
+----
+
+== Explication de la requête :
+
+L'en-tête SOAPAction spécifie l'action à effectuer, ici c'est "urn:getAccountBalance".
+
+=== ...
+
+Le corps de la requête (Body) contient une balise GetAccountBalanceRequest, qui est une méthode spécifique à ce service. 
+
+=== ...
+
+Dans ce cas, elle demande le solde du compte numéro 1234567890.
+Réponse SOAP
+
+=== ...
+
+Après avoir traité la requête, le serveur renverra une réponse SOAP avec le solde du compte :
+
+[source, xml]
+----
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Header/>
+   <soap:Body>
+      <GetAccountBalanceResponse xmlns="http://www.bankexample.com/">
+         <balance>1500.00</balance>
+         <currency>USD</currency>
+      </GetAccountBalanceResponse>
+   </soap:Body>
+</soap:Envelope>
+----
+
+=== Explication de la réponse :
+
+Le serveur retourne une réponse avec le solde du compte dans l'élément balance (ici 1500.00), et la devise (currency) qui est en USD.
