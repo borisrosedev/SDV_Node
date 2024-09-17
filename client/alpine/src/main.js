@@ -1,6 +1,7 @@
 import Alpine from "../../node_modules/alpinejs/dist/module.esm.js";
 import HomeContainer from "./js/container/home/home.container.js";
 import LoginContainer from "./js/container/login/login.container.js";
+import RegisterContainer from "./js/container/register/register.container.js";
 
 window.Alpine = Alpine;
 
@@ -19,6 +20,7 @@ switch (page) {
     Alpine.start();
     break;
   case "register.html":
+    new RegisterContainer(Alpine);
     console.log("register");
     Alpine.start();
     break;

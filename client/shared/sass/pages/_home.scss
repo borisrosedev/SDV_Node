@@ -3,5 +3,9 @@
 .home__main {
   @include mixins.flex-box(center, center, column);
   .home__welcome-section {
+    
+    h1 {
+      font-size: 30px;
+    }
   }
 }

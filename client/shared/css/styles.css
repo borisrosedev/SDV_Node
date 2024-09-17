@@ -69,14 +69,17 @@ img {
   border-radius: 50%;
   overflow: hidden;
 }
-.app-header nav, .app-header ul {
+.app-header nav,
+.app-header ul {
   display: flex;
 }
-.app-header nav a, .app-header ul a {
+.app-header nav a,
+.app-header ul a {
   color: #fff;
   transition: all ease-in-out 300ms;
 }
-.app-header nav a:hover, .app-header ul a:hover {
+.app-header nav a:hover,
+.app-header ul a:hover {
   color: rgb(201, 100, 201);
 }
 
@@ -95,6 +98,10 @@ img {
   align-items: center;
   justify-content: center;
 }
+.home__main .home__welcome-section h1 {
+  font-size: 30px;
+}
+
 .login__main {
   background-blend-mode: color;
   background-color: rgba(0, 0, 0, 0.4);

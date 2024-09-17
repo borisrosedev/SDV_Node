@@ -50,7 +50,10 @@ class PretenderController {
             password: hashPassword
         })
 
-        return res.status(201).json(newPretender)
+        const newPretenderDTO = {...newPretender.dataValues}
+        delete newPretenderDTO.password
+
+        return res.status(201).json(newPretenderDTO)
         
     }
     //crud 

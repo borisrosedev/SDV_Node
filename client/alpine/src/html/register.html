@@ -35,7 +35,7 @@
     <main class="app-main register__main" x-data>
       <section class="register__form-section">
         <h1 x-text="'Inscription'"></h1>
-        <form class="app-form">
+        <form class="app-form" x-bind="RegisterForm">
           <section class="form__fields-section">
             <section class="form__email-section">
               <article>
@@ -45,7 +45,7 @@
                   class="input"
                   placeholder="Entrez votre email"
                   type="email"
-                  pattern="[a-z0-9.]{2,30}[@]{1}[a-z]{2.6}[.]{1}[a-z]{2,6}"
+                  pattern="[a-z0-9.]{2,30}[@]{1}[a-z]{2,6}[.]{1}[a-z]{2,6}"
                   aria-required="true"
                   required
                 />
@@ -60,7 +60,6 @@
                   class="input"
                   placeholder="Entrez votre mot de passe (de 12 à 20 caractères)"
                   type="password"
-                  pattern="[a-z0-9.!?éàïèü$]{12,20}"
                   aria-required="true"
                   required
                 />

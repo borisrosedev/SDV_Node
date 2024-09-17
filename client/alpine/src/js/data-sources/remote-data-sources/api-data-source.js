@@ -26,7 +26,6 @@ class ApiDataSource {
         },
         body: JSON.stringify(data),
       });
-
       const deserializedResponse = await response.json();
       return deserializedResponse;
     } catch (e) {
